@@ -1,0 +1,39 @@
+{%extends 'base.html' %}
+
+{%block title%} Welcome to MYBLOGS{%endblock%}
+
+{%block content%}
+
+<div class="container">
+
+    <div class ="row">
+
+        <div class="col s12 ">
+
+
+            {% for p in posts %}
+            <div class="row">
+
+                <div class="col s12 m8 ">
+
+                     {{p.content | safe}}
+                     <div class ="mt20">
+
+                     </div>
+                </div>
+
+                <div class="col s12 m4">
+                    <img src="/media/{{p.image}}" class="responsive-img" style="margin-top:50px;">
+
+                </div>
+
+
+            </div>
+            {%endfor %}
+
+
+        </div>
+    </div>
+
+</div>
+{%endblock%}
